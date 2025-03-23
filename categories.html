@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/categories.css" />
+  <title>Categories - QuickBooks</title>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1 class="logo">
+      <span style="color: #ffc107;">Quick</span><span style="color: white;">Books</span>
+    </h1>
+    <nav>
+      <a href="/">Home</a> <!-- Changed from index.html to / -->
+      <a href="/categories.html">Categories</a>
+      <a href="/cart.html">Cart</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <h1>Categories</h1>
+
+    <!-- Fiction Section -->
+    <div class="book-list">
+      <div class="book-card">
+        <img src="/static/book1.png" alt="Why I Am Paying More" />
+        <h3>IIMA: Why I Am Paying More</h3>
+        <p>By Satish Y. Deodhar</p>
+        <p>₹273.00</p>
+        <button onclick="addToCart('IIMA: Why I Am Paying More', 273)">Add to Cart</button>
+        <button onclick="buyNow('IIMA: Why I Am Paying More', 273)">Buy Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="/static/book2.png" alt="Brands & The Brain" />
+        <h3>Brands & The Brain</h3>
+        <p>By Arvind Sahay</p>
+        <p>₹332.00</p>
+        <button onclick="addToCart('Brands & The Brain', 332)">Add to Cart</button>
+        <button onclick="buyNow('Brands & The Brain', 332)">Buy Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="/static/newspaper.png" alt="Freakonomics" />
+        <h3>Freakonomics</h3>
+        <p>By Steven D. Levitt</p>
+        <p class="discount">₹259.00 <span class="mrp">₹350.00</span></p>
+        <button onclick="addToCart('Freakonomics', 259)">Add to Cart</button>
+        <button onclick="buyNow('Freakonomics', 259)">Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

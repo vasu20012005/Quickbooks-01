@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/cart.css" />
+  <title>Cart - QuickBooks</title>
+</head>
+<body>
+  <header>
+    <h1 class="logo">
+      <span style="color: #ffc107;">Quick</span><span style="color: white;">Books</span>
+    </h1>
+    <nav>
+      <a href="/">Home</a> <!-- Changed from index.html to / -->
+      <a href="/categories.html">Categories</a>
+      <a href="/cart.html">Cart</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="cart">
+    <h1>Your Cart</h1>
+    <ul id="cart-list"></ul>
+    <h3 id="total-price">Total: ₹0</h3>
+    <button onclick="checkout()">Proceed to Checkout</button>
+  </section>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

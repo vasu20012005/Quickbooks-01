@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery Dashboard - QuickBooks</title>
+  <link rel="stylesheet" href="/static/delivery.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">
+      <span style="color: #ffc107;">Quick</span><span style="color: white;">Books</span>
+    </h1>
+    <nav>
+      <a href="/delivery">Dashboard</a>
+      <a href="http://127.0.0.1:5000/">Customer Website</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <section class="dashboard">
+    <h1>Pending Orders</h1>
+    <ul id="order-list"></ul>
+  </section>
+
+  <script>
+    function fetchOrders() {
+      fetch('/get_orders')
+        .then(response => response.json())
+        .then(data => {
+          const orderList = document.getElementById('order-list');
+          orderList.innerHTML = '';
+          data.forEach(order => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              Order #${order.id} - Items: ${order.items} - Total: ₹${order.total} - Time: ${new Date(order.timestamp).toLocaleString()}
+              <button onclick="acceptOrder(${order.id})">Accept</button>
+            `;
+            orderList.appendChild(li);
+          });
+        });
+    }
+
+    function acceptOrder(orderId) {
+      fetch('/accept_order/' + orderId, { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+          fetchOrders();
+        });
+    }
+
+    setInterval(fetchOrders, 5000); // Refresh every 5 seconds
+    fetchOrders(); // Initial fetch
+  </script>
+</body>
+</html>

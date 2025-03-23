@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBooks - Home</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1 class="logo">
+      <span style="color: #ffc107;">Quick</span><span style="color: white;">Books</span>
+    </h1>
+    <nav>
+      <a href="/">Home</a> <!-- Changed from index.html to / -->
+      <a href="/categories.html">Categories</a>
+      <a href="/cart.html">Cart</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Books at Your Doorstep in 20 Minutes!</h2>
+    <input type="text" placeholder="Find your next read..." />
+    <button onclick="alert('Redirecting to the shop...')">Shop Now</button>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories" id="categories">
+    <h3>Categories</h3>
+    <div class="category-grid">
+      <a href="categories.html#fiction" class="category">Fiction</a>
+      <a href="categories.html#non-fiction" class="category">Non-Fiction</a>
+      <a href="categories.html#newspapers" class="category">Newspapers</a>
+    </div>
+  </section>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
